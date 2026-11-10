@@ -159,3 +159,10 @@ Keep one Uvicorn worker initially: the concurrency cap is per Python process. In
 This is a bounded first version, not a hardened public document sandbox. Before exposing it to arbitrary internet traffic, add ingress rate limits and network isolation for conversion workers, and keep parsers/LibreOffice patched. Do not mount personal directories or secrets into the conversion container.
 
 Files are temporarily written to disk; they are not kept in an application database. Normal requests clean up after response delivery or conversion failure. A client leaving during processing may leave that work running until it finishes or reaches its timeout; cleanup still follows. Crashed-process leftovers older than 24 hours are removed at the next API startup. Downloaded blobs remain in the browser until the user resets the form or leaves the page.
+
+
+## URL
+```sh
+frontend_URL: https://straight-convertor-2snn.vercel.app/
+backend_URL: https://straight-convertor-qg4g.onrender.com/
+```
